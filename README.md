@@ -2,8 +2,6 @@
 
 Reveal Deleted FB Messages là extension dành cho Chrome, giúp bạn lưu và xem lại những tin nhắn đã bị gỡ hoặc thu hồi trên Facebook Messenger.
 
-> Repo này chỉ dùng để **hỗ trợ và nhận báo lỗi**. Mã nguồn của extension không được công khai.
-
 ## Tính năng
 
 - Lưu lại tin nhắn văn bản trước khi người gửi thu hồi.
