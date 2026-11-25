@@ -1,0 +1,117 @@
+name: Báo lỗi
+description: Extension không lưu được tin, không hiện nút xem lại, hoặc hoạt động sai
+title: "[Lỗi] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã báo lỗi! Bạn chỉ cần điền các mục bên dưới.
+
+        **Lưu ý riêng tư:** không dán nội dung tin nhắn, tên hoặc ảnh của người khác vào đây. Issue này công khai. Hãy che hoặc thay bằng nội dung giả trước khi gửi.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Loại nội dung bị lỗi
+      options:
+        - Tin nhắn văn bản
+        - Ảnh
+        - Video
+        - Âm thanh
+        - File đính kèm
+        - Popup hoặc giao diện
+        - Khác
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chat
+    attributes:
+      label: Loại cuộc trò chuyện
+      options:
+        - Cá nhân
+        - Nhóm
+        - Mã hóa đầu cuối
+        - Không rõ
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: Chuyện gì đã xảy ra?
+      description: Mô tả ngắn gọn, ví dụ "bấm nút con mắt nhưng báo không tìm thấy nội dung".
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước để tái hiện lỗi
+      placeholder: |
+        1. Mở cuộc trò chuyện ...
+        2. Người kia gửi ... rồi thu hồi
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Bạn mong đợi điều gì?
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản extension
+      description: Xem trong `chrome://extensions`, ví dụ 1.0.0.
+    validations:
+      required: true
+
+  - type: input
+    id: chrome
+    attributes:
+      label: Phiên bản Chrome và hệ điều hành
+      description: Vào `chrome://version` để xem. Ví dụ Chrome 158, Windows 11.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logfile
+    attributes:
+      label: File log
+      description: |
+        Ở tab Facebook vừa bị lỗi, nhấn **Alt + Shift + D** để tải file `rvdfm-log-....log`, rồi kéo thả file đó vào đây.
+        File chỉ chứa thông tin kỹ thuật (phiên bản, cài đặt, số liệu, lỗi), không có nội dung tin nhắn, tên hay ID. Bạn có thể mở bằng Notepad để kiểm tra trước khi đăng.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Lỗi trong console (nếu có)
+      description: |
+        Mở tab Facebook vừa bị lỗi, nhấn F12, chọn tab Console và sao chép các dòng chữ đỏ có chứa `RVDFM`.
+        Với lỗi của service worker, vào `chrome://extensions`, bấm **Service worker** ở extension này rồi sao chép các dòng chữ đỏ.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Ảnh chụp màn hình (nếu có)
+      description: Kéo thả ảnh vào đây. Nhớ che tên và nội dung tin nhắn.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Xác nhận
+      options:
+        - label: Tôi đã che hoặc không đưa nội dung tin nhắn, tên và thông tin cá nhân của người khác vào issue này.
+          required: true
